@@ -68,3 +68,10 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Mirror examples
+/Assets/Mirror/Examples.meta
+/Assets/Mirror/Examples/*
+
+# Build
+Build.app
