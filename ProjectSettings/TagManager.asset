@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PlayerId
   - Health
+  - Panel
+  - Temp
   layers:
   - Default
   - TransparentFX
