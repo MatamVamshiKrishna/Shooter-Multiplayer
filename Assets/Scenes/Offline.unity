@@ -329,7 +329,7 @@ MonoBehaviour:
   spawnPrefabs: []
   showRoomGUI: 1
   minPlayers: 1
-  roomPlayerPrefab: {fileID: 1917046636290459280, guid: b8dde71da60d74f23a41a32edb158e9a,
+  roomPlayerPrefab: {fileID: -4609346783724698685, guid: b8dde71da60d74f23a41a32edb158e9a,
     type: 3}
   RoomScene: Room
   GameplayScene: Online

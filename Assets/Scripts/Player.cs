@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Player : NetworkBehaviour
 {
-
+    public MeshRenderer meshRenderer; 
     private Animator animator = null;
     private CharacterController controller = null;
 
@@ -28,10 +28,33 @@ public class Player : NetworkBehaviour
             Health = GameObject.FindGameObjectWithTag("Health").GetComponent<Text>();
             PlayerId.text = "Player Id: " + netId.ToString();
             Health.text = "Health: " + health.ToString();
+
+
+            CmdUpdateCube(Mainmenu.color.r, Mainmenu.color.g, Mainmenu.color.b, Mainmenu.color.a);
         }
     }
 
-    // Update is called once per frame
+    [Command]
+    void CmdUpdateCube(float r, float g, float b, float a)
+    {
+        Debug.Log("Executed on server");
+        UpdateCube(r, g, b, a);
+        RpcUpdateCube(r, g, b, a);
+    }
+
+    [ClientRpc]
+    void RpcUpdateCube(float r, float g, float b, float a)
+    {
+        Debug.Log("Executed on client");
+        UpdateCube(r, g, b, a);
+    }
+
+    void UpdateCube(float r, float g, float b, float a )
+    {
+        Debug.Log("Executed here");
+        meshRenderer.material.color = new Color(r, g, b, a);
+    }
+
     void Update()
     {
         // To check authority
